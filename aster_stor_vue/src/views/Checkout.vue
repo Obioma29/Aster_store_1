@@ -1,6 +1,6 @@
 <template>
     <div class="page-checkout">
-        <div class="columns is multiline">
+        <div class="columns is-multiline">
             <div class="column is-12">
                 <h1 class="title">Checkout</h1>
             </div>
@@ -22,10 +22,9 @@
                             v-bind:key="item.product.id"
                         >
                             <td>{{ item.product.name }}</td>
-                            <td>₦{{ item.product.name }}</td>
+                            <td>₦{{ item.product.price }}</td>
                             <td>{{ item.quantity }}</td>
                             <td>₦{{ getItemTotal(item).toFixed(2) }}</td>
-                            <td></td>
                         </tr>
                     </tbody>
 
@@ -38,14 +37,13 @@
                     </tfoot>
                 </table>
             </div>
-        </div>
 
-        <div class="column is-12 box">
-            <h2 class="subtitle">Shipping details</h2>
+            <div class="column is-12 box">
+                <h2 class="subtitle">Shipping details</h2>
 
-            <p class="has-text-grey mb-4">* All fields are required</p>
+                <p class="has-text-grey mb-4">* All fields are required</p>
 
-            <div class="columns is-multiline">
+                <div class="columns is-multiline">
                     <div class="column is-6">
                         <div class="field">
                             <label>First name*</label>
@@ -111,8 +109,9 @@
                 <template v-if="cartTotalLength">
                     <hr>
 
-                    <button class="button is-dark" @click="submitForm">Pay with stripe</button>
+                    <button class="button is-dark" @click="submitForm">Pay with Paystack</button>
                 </template>
+            </div>
         </div>
     </div>
 </template>
